@@ -1,0 +1,19 @@
+title: "Micheal Ezeoda"
+tagline: "The powers and limits of representation"
+description: >-
+  Independent research on representation, search, and computation — reproduced from
+  first principles, with honest ceilings. By a software engineer with broad scientific
+  curiosity.
+theme: minima
+github_username: myketheguru
+author:
+  name: "Micheal Ezeoda"
+header_pages:
+  - about.md
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Minima look
+minima:
+  skin: auto
