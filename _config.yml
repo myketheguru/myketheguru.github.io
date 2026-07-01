@@ -1,19 +1,22 @@
 title: "Micheal Ezeoda"
-tagline: "The powers and limits of representation"
+tagline: "Engineer · Consultant · Independent Researcher"
 description: >-
-  Independent research on representation, search, and computation — reproduced from
-  first principles, with honest ceilings. By a software engineer with broad scientific
-  curiosity.
-theme: minima
-github_username: myketheguru
+  Micheal Ezeoda — technology consultant and senior full-stack engineer (10+ years),
+  independent researcher, and chess player. Building products; chasing hard questions.
+url: "https://myketheguru.github.io"
 author:
   name: "Micheal Ezeoda"
-header_pages:
-  - about.md
+github_username: myketheguru
+
+# Custom theme — no gem theme; layouts + assets are hand-built.
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Minima look
-minima:
-  skin: auto
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .gitignore
+  - .gitattributes

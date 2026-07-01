@@ -1,0 +1,223 @@
+/* ===========================================================================
+   Micheal Ezeoda — personal site. Custom theme, hand-built.
+   Dark editorial · Fraunces + Inter + Space Mono · restrained gold accent.
+   =========================================================================== */
+
+:root{
+  --bg:#0a0a0b;
+  --bg-2:#111114;
+  --ink:#ECE7DB;          /* warm paper */
+  --ink-dim:#938f84;
+  --ink-faint:#5c584f;
+  --line:rgba(236,231,219,.13);
+  --gold:#C9A24A;
+  --gold-soft:rgba(201,162,74,.16);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --mono:'Space Mono','SFMono-Regular',monospace;
+  --maxw:1180px;
+  --pad:clamp(1.25rem,5vw,4rem);
+  --sect:clamp(5rem,13vh,9rem);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-weight:300;line-height:1.6;
+  letter-spacing:.005em;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* subtle film grain */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:9;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+::selection{background:var(--gold);color:#0a0a0b}
+
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+
+/* ---- nav ---------------------------------------------------------------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.15rem var(--pad);
+  transition:padding .4s var(--ease),background .4s var(--ease),border-color .4s var(--ease);
+  border-bottom:1px solid transparent;
+}
+body.scrolled .nav{
+  padding:.7rem var(--pad);
+  background:rgba(10,10,11,.72);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav__brand{display:flex;align-items:center;gap:.6rem;font-weight:500}
+.nav__mono{
+  font-family:var(--mono);font-weight:700;font-size:.8rem;letter-spacing:.05em;
+  border:1px solid var(--line);border-radius:50%;width:2rem;height:2rem;
+  display:grid;place-items:center;color:var(--gold);
+}
+.nav__name{font-size:.9rem;letter-spacing:.01em}
+.nav__links{display:flex;gap:2rem}
+.nav__links a{
+  font-size:.82rem;color:var(--ink-dim);letter-spacing:.02em;position:relative;transition:color .3s;
+}
+.nav__links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--gold);transition:width .35s var(--ease)}
+.nav__links a:hover{color:var(--ink)}
+.nav__links a:hover::after{width:100%}
+.nav__toggle{display:none;background:none;border:0;cursor:pointer;width:2rem;height:2rem;flex-direction:column;justify-content:center;gap:5px}
+.nav__toggle span{display:block;height:1.5px;width:20px;background:var(--ink);transition:.3s var(--ease)}
+
+/* ---- layout primitives -------------------------------------------------- */
+.section{max-width:var(--maxw);margin:0 auto;padding:var(--sect) var(--pad);border-top:1px solid var(--line)}
+.section__head{display:flex;align-items:baseline;gap:1rem;margin-bottom:2.6rem}
+.section__num{font-family:var(--mono);font-size:.8rem;color:var(--gold);letter-spacing:.1em}
+.section__title{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,4vw,2.6rem);letter-spacing:-.01em}
+.section__sub{color:var(--ink-dim);max-width:46ch;margin:-1.6rem 0 2.4rem;font-size:1.02rem}
+
+/* ---- hero --------------------------------------------------------------- */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  max-width:var(--maxw);margin:0 auto;padding:8rem var(--pad) 4rem;position:relative}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:1.6rem}
+.hero__name{
+  font-family:var(--serif);font-weight:340;line-height:.92;letter-spacing:-.03em;
+  font-size:clamp(3.6rem,16vw,11rem);
+  font-variation-settings:"opsz" 144;
+}
+.hero__name em{font-style:italic;color:var(--gold)}
+.hero__lead{max-width:52ch;margin-top:2rem;font-size:clamp(1.05rem,2.2vw,1.35rem);color:var(--ink);font-weight:300;line-height:1.55}
+.hero__actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.6rem}
+.btn{
+  font-size:.85rem;letter-spacing:.02em;padding:.85rem 1.6rem;border-radius:100px;
+  background:var(--gold);color:#0a0a0b;font-weight:500;transition:transform .3s var(--ease),background .3s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn--ghost:hover{border-color:var(--gold);color:var(--gold)}
+.scrollcue{position:absolute;bottom:2rem;left:var(--pad);font-size:1.1rem;color:var(--ink-dim);animation:bob 2.4s var(--ease) infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(6px);opacity:1}}
+
+/* ---- about -------------------------------------------------------------- */
+.about{max-width:60ch}
+.about__big{font-family:var(--serif);font-weight:340;font-size:clamp(1.4rem,3.2vw,2rem);line-height:1.35;letter-spacing:-.01em;margin-bottom:1.6rem}
+.about p+p{margin-top:1.1rem;color:var(--ink-dim)}
+.about a{color:var(--ink);border-bottom:1px solid var(--gold-soft);transition:border-color .3s}
+.about a:hover{border-color:var(--gold)}
+
+/* ---- skills grid -------------------------------------------------------- */
+.grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.grid--skills{grid-template-columns:repeat(2,1fr)}
+.skill{background:var(--bg);padding:2rem 1.9rem;transition:background .4s}
+.skill:hover{background:var(--bg-2)}
+.skill h3{font-family:var(--serif);font-weight:400;font-size:1.15rem;margin-bottom:.8rem}
+.skill p{font-size:.92rem;color:var(--ink-dim);line-height:1.65}
+
+/* ---- experience --------------------------------------------------------- */
+.exp{list-style:none;border-top:1px solid var(--line)}
+.exp__item{
+  display:grid;grid-template-columns:1fr auto;gap:.3rem 2rem;align-items:baseline;
+  padding:1.5rem 0;border-bottom:1px solid var(--line);transition:padding-left .4s var(--ease);
+}
+.exp__item:hover{padding-left:1rem}
+.exp__role{font-family:var(--serif);font-size:1.25rem;font-weight:400}
+.exp__when{font-family:var(--mono);font-size:.74rem;color:var(--ink-dim);white-space:nowrap;text-align:right}
+.exp__org{color:var(--gold);font-size:.9rem}
+.exp__note{grid-column:1/-1;color:var(--ink-dim);font-size:.92rem;margin-top:.3rem;max-width:70ch}
+.exp__earlier{margin-top:1.6rem;color:var(--ink-faint);font-size:.86rem;line-height:1.7}
+
+/* ---- work / cards ------------------------------------------------------- */
+.grid--work{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--bg);padding:2.2rem 2rem;display:flex;flex-direction:column;gap:.7rem;
+  position:relative;transition:background .4s var(--ease),transform .4s var(--ease)}
+.card:hover{background:var(--bg-2)}
+a.card:hover{transform:translateY(-4px)}
+.card__tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.card h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;letter-spacing:-.01em}
+.card p{font-size:.95rem;color:var(--ink-dim);line-height:1.6;flex:1}
+.card__go{font-size:.82rem;color:var(--ink);margin-top:.5rem;transition:color .3s,letter-spacing .3s}
+a.card:hover .card__go{color:var(--gold);letter-spacing:.03em}
+
+/* ---- writing list ------------------------------------------------------- */
+.writing{list-style:none;border-top:1px solid var(--line)}
+.writing a{display:grid;grid-template-columns:auto 1fr auto;gap:1.4rem;align-items:baseline;
+  padding:1.5rem 0;border-bottom:1px solid var(--line);transition:padding-left .4s var(--ease),color .3s}
+.writing a:hover{padding-left:1rem}
+.writing__idx{font-family:var(--mono);font-size:.78rem;color:var(--gold)}
+.writing__title{font-family:var(--serif);font-size:clamp(1.15rem,2.6vw,1.5rem);font-weight:400;transition:color .3s}
+.writing a:hover .writing__title{color:var(--gold)}
+.writing__date{font-family:var(--mono);font-size:.72rem;color:var(--ink-dim);white-space:nowrap}
+
+/* ---- chess -------------------------------------------------------------- */
+.section--chess .about__big{max-width:24ch}
+.chess__pieces{font-size:clamp(2rem,7vw,3.4rem);letter-spacing:.4rem;color:var(--ink-faint);margin-top:2rem}
+.chess__pieces span{transition:color .4s,transform .4s var(--ease);display:inline-block}
+.section--chess:hover .chess__pieces span{color:var(--gold)}
+
+/* ---- contact ------------------------------------------------------------ */
+.section--contact{text-align:left}
+.contact__big{font-family:var(--serif);font-weight:340;font-size:clamp(2rem,7vw,4.6rem);line-height:1.02;letter-spacing:-.03em;max-width:16ch;margin-bottom:2.2rem}
+.contact__email{font-family:var(--serif);font-size:clamp(1.2rem,4vw,2rem);border-bottom:1px solid var(--gold-soft);padding-bottom:.15rem;transition:border-color .3s,color .3s}
+.contact__email:hover{border-color:var(--gold);color:var(--gold)}
+.contact__links{display:flex;flex-wrap:wrap;gap:1.8rem;margin-top:2.4rem}
+.contact__links a{font-size:.9rem;color:var(--ink-dim);position:relative;transition:color .3s}
+.contact__links a::after{content:"↗";margin-left:.25rem;font-size:.75rem}
+.contact__links a:hover{color:var(--gold)}
+.contact__note{margin-top:2.4rem;color:var(--ink-faint);font-size:.86rem}
+
+/* ---- footer ------------------------------------------------------------- */
+.footer{border-top:1px solid var(--line);margin-top:2rem}
+.footer__inner{max-width:var(--maxw);margin:0 auto;padding:2.4rem var(--pad);
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;
+  font-size:.8rem;color:var(--ink-dim)}
+.footer__name{font-family:var(--serif);color:var(--ink)}
+.footer__top{color:var(--ink-dim);transition:color .3s}
+.footer__top:hover{color:var(--gold)}
+
+/* ---- essay (post) ------------------------------------------------------- */
+.post{max-width:44rem;margin:0 auto;padding:9rem var(--pad) 5rem}
+.post__back{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--ink-dim);transition:color .3s}
+.post__back:hover{color:var(--gold)}
+.post__back--end{display:inline-block;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line);width:100%}
+.post__meta{margin:1.6rem 0 .6rem}
+.post__title{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,6vw,3.4rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:2.5rem}
+.post__body{font-size:1.09rem;line-height:1.72;color:#DAD4C7}
+.post__body h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.4rem,3.4vw,1.9rem);letter-spacing:-.01em;margin:2.8rem 0 1rem;color:var(--ink)}
+.post__body h3{font-family:var(--serif);font-weight:400;font-size:1.3rem;margin:2rem 0 .8rem;color:var(--ink)}
+.post__body p{margin-bottom:1.25rem}
+.post__body strong{color:var(--ink);font-weight:500}
+.post__body em{color:var(--ink)}
+.post__body a{color:var(--gold);border-bottom:1px solid var(--gold-soft);transition:border-color .3s}
+.post__body a:hover{border-bottom-color:var(--gold)}
+.post__body blockquote{border-left:2px solid var(--gold);padding:.4rem 0 .4rem 1.4rem;margin:1.8rem 0;
+  font-family:var(--serif);font-size:1.25rem;font-style:italic;color:var(--ink)}
+.post__body ul,.post__body ol{margin:0 0 1.4rem 1.2rem}
+.post__body li{margin-bottom:.5rem}
+.post__body code{font-family:var(--mono);font-size:.86em;background:var(--bg-2);padding:.1rem .4rem;border-radius:4px;color:var(--gold)}
+.post__body hr{border:0;border-top:1px solid var(--line);margin:2.5rem 0}
+
+/* ---- reveal ------------------------------------------------------------- */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+[data-reveal].is-in{opacity:1;transform:none}
+
+/* ---- responsive --------------------------------------------------------- */
+@media (max-width:760px){
+  .nav__links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);flex-direction:column;justify-content:center;
+    gap:2rem;padding:var(--pad);background:rgba(12,12,14,.96);backdrop-filter:blur(20px);
+    border-left:1px solid var(--line);transform:translateX(100%);transition:transform .5s var(--ease)}
+  .nav.is-open .nav__links{transform:none}
+  .nav__links a{font-size:1.2rem;font-family:var(--serif);color:var(--ink)}
+  .nav__toggle{display:flex;z-index:60}
+  .nav.is-open .nav__toggle span:first-child{transform:translateY(3.5px) rotate(45deg)}
+  .nav.is-open .nav__toggle span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+  .nav__name{display:none}
+  .grid--skills,.grid--work{grid-template-columns:1fr}
+  .exp__item{grid-template-columns:1fr}
+  .exp__when{text-align:left;margin-top:.2rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;scroll-behavior:auto}
+  [data-reveal]{opacity:1;transform:none;transition:none}
+}
