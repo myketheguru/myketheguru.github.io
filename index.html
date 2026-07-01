@@ -107,19 +107,21 @@ layout: default
 <!-- 05 · Writing / Research -->
 <section class="section" id="writing">
   <div class="section__head" data-reveal><span class="section__num">05</span><h2 class="section__title">Writing &amp; Research</h2></div>
-  <p class="section__sub" data-reveal>A five-part series on search, representation, and computation — plain English, with the code. Start at Part 1.</p>
+  <p class="section__sub" data-reveal>Plain-English essays and research, with the code — a growing library. Featured series below.</p>
+  <p class="wr-series mono" data-reveal>Series · Can We Abolish Search?</p>
   <ul class="writing" data-reveal>
-    {% assign parts = site.posts | reverse %}
-    {% for post in parts %}
+    {% assign feat = site.posts | where: "series", "Can We Abolish Search?" | sort: "part" %}
+    {% for post in feat %}
     <li>
       <a href="{{ post.url | relative_url }}">
-        <span class="writing__idx">{{ forloop.index | prepend:'0' | slice: -2, 2 }}</span>
+        <span class="writing__idx">{{ post.part | prepend:'0' | slice: -2, 2 }}</span>
         <span class="writing__title">{{ post.title | split: ': ' | last }}</span>
         <span class="writing__date">{{ post.date | date: "%b %Y" }}</span>
       </a>
     </li>
     {% endfor %}
   </ul>
+  <a class="wr-all" href="{{ '/writing/' | relative_url }}" data-reveal>All writing &amp; research →</a>
 </section>
 
 <!-- 06 · Chess -->

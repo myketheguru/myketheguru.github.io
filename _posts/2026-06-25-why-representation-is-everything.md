@@ -3,6 +3,11 @@ layout: post
 title: "Part 2: Why representation is everything"
 date: 2026-06-25 12:00:00 +0000
 permalink: /why-representation-is-everything/
+series: "Can We Abolish Search?"
+part: 2
+category: research
+summary: "Why the frame you choose is (almost) the whole game."
+tags: [search, representation, computation, foundations]
 ---
 
 In [Part 1](/can-we-abolish-search/) I chased one question to the bottom: can a clever enough way of *seeing* a problem make the hard searching disappear? The answer was no — the work is conserved; you can move it around, but you can't delete it. That sounds like a dead end. It's actually the setup for the most useful thing I found: the way you frame a problem is *almost everything* — just not in the way the hype promises.

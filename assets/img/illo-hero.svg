@@ -1,18 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 440">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6BE3CE"/><stop offset=".5" stop-color="#4FD8C4"/><stop offset="1" stop-color="#59A9EE"/></linearGradient></defs>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6BE3CE"/><stop offset=".5" stop-color="#4FD8C4"/><stop offset="1" stop-color="#59A9EE"/></linearGradient>
+    <style>
+      .needle{transform-box:view-box;transform-origin:220px 220px;animation:sweep 7s ease-in-out infinite}
+      @keyframes sweep{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}
+      .arc{animation:flow 24s linear infinite}
+      @keyframes flow{to{stroke-dashoffset:-942}}
+      .pnode{transform-box:view-box;transform-origin:382px 86px;animation:pulse 3.2s ease-in-out infinite}
+      @keyframes pulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.14)}}
+      .ring{transform-box:view-box;transform-origin:382px 86px;animation:ring 3.2s ease-out infinite}
+      @keyframes ring{0%{opacity:.5;transform:scale(.55)}75%,100%{opacity:0;transform:scale(1.6)}}
+      .dot{animation:tw 4s ease-in-out infinite}
+      .dot:nth-child(2){animation-delay:.6s}.dot:nth-child(3){animation-delay:1.2s}.dot:nth-child(4){animation-delay:1.8s}
+      @keyframes tw{0%,100%{opacity:.3}50%{opacity:.9}}
+      @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+    </style>
+  </defs>
   <g fill="none" stroke-linecap="round">
     <circle cx="220" cy="220" r="150" stroke="#26262b" stroke-width="2"/>
-    <circle cx="220" cy="220" r="150" stroke="url(#g)" stroke-width="4" stroke-dasharray="600 342" transform="rotate(-208 220 220)"/>
-    <line x1="220" y1="220" x2="318" y2="146" stroke="url(#g)" stroke-width="4"/>
+    <circle class="arc" cx="220" cy="220" r="150" stroke="url(#g)" stroke-width="4" stroke-dasharray="600 342" transform="rotate(-208 220 220)"/>
+    <line class="needle" x1="220" y1="220" x2="318" y2="146" stroke="url(#g)" stroke-width="4"/>
   </g>
   <g stroke="#37342d" stroke-width="1">
     <line x1="318" y1="146" x2="382" y2="86"/><line x1="318" y1="146" x2="358" y2="222"/>
     <line x1="120" y1="120" x2="92" y2="205"/><line x1="150" y1="330" x2="300" y2="330"/>
   </g>
   <g fill="#4a463f">
-    <circle cx="92" cy="205" r="3"/><circle cx="120" cy="120" r="3"/><circle cx="358" cy="222" r="3"/><circle cx="150" cy="330" r="3"/><circle cx="300" cy="330" r="3"/>
+    <circle class="dot" cx="92" cy="205" r="3"/><circle class="dot" cx="120" cy="120" r="3"/><circle class="dot" cx="358" cy="222" r="3"/><circle class="dot" cx="150" cy="330" r="3"/><circle cx="300" cy="330" r="3"/>
   </g>
-  <circle cx="220" cy="220" r="7" fill="#4FD8C4"/>
-  <circle cx="382" cy="86" r="8" fill="#59A9EE"/>
-  <circle cx="382" cy="86" r="16" fill="none" stroke="#59A9EE" stroke-opacity=".4" stroke-width="1.5"/>
+  <circle class="pnode" cx="382" cy="86" r="8" fill="#59A9EE"/>
+  <circle class="ring" cx="382" cy="86" r="15" fill="none" stroke="#59A9EE" stroke-width="1.5"/>
 </svg>

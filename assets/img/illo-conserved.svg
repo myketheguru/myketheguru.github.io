@@ -1,15 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4FD8C4"/><stop offset="1" stop-color="#59A9EE"/></linearGradient></defs>
-  <path d="M 30 150 C 90 150 96 186 150 186 C 210 186 208 96 268 96 C 326 96 336 150 396 150 L 452 150"
-        fill="none" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
-  <g stroke="#59A9EE" stroke-width="2.5" stroke-linecap="round" fill="none">
-    <line x1="120" y1="70" x2="120" y2="150"/>
-    <path d="M 110 138 L 120 152 L 130 138"/>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4FD8C4"/><stop offset="1" stop-color="#59A9EE"/></linearGradient>
+    <style>
+      .press{animation:press 4s ease-in-out infinite}
+      @keyframes press{0%,100%{transform:translateY(0)}45%,55%{transform:translateY(14px)}}
+      .surface{animation:squash 4s ease-in-out infinite}
+      @keyframes squash{0%,100%{d:path("M 30 150 C 90 150 96 176 150 176 C 210 176 208 116 268 116 C 326 116 336 150 396 150 L 452 150")}50%{d:path("M 30 150 C 90 150 96 186 150 186 C 210 186 208 92 268 92 C 326 92 336 150 396 150 L 452 150")}}
+      .up{animation:up 4s ease-in-out infinite}
+      @keyframes up{0%,100%{opacity:.3;transform:translateY(6px)}50%{opacity:1;transform:translateY(-4px)}}
+      @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+    </style>
+  </defs>
+  <path class="surface" d="M 30 150 C 90 150 96 176 150 176 C 210 176 208 116 268 116 C 326 116 336 150 396 150 L 452 150" fill="none" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
+  <g class="press" stroke="#59A9EE" stroke-width="2.5" stroke-linecap="round" fill="none">
+    <line x1="120" y1="70" x2="120" y2="150"/><path d="M 110 138 L 120 152 L 130 138"/>
   </g>
-  <g stroke="#4FD8C4" stroke-width="2" stroke-linecap="round" fill="none" opacity=".9">
-    <line x1="268" y1="150" x2="268" y2="70"/>
-    <path d="M 258 82 L 268 68 L 278 82"/>
+  <g class="up" stroke="#4FD8C4" stroke-width="2" stroke-linecap="round" fill="none">
+    <line x1="268" y1="150" x2="268" y2="78"/><path d="M 258 90 L 268 76 L 278 90"/>
   </g>
-  <circle cx="268" cy="96" r="4" fill="#4FD8C4"/>
   <line x1="24" y1="205" x2="456" y2="205" stroke="#2b2b30" stroke-width="1"/>
 </svg>

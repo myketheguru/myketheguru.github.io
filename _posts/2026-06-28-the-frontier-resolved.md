@@ -3,6 +3,11 @@ layout: post
 title: "Part 5: The frontier, resolved"
 date: 2026-06-28 12:00:00 +0000
 permalink: /the-frontier-resolved/
+series: "Can We Abolish Search?"
+part: 5
+category: research
+summary: "Building in public: one experiment, four versions, one answer."
+tags: [search, representation, computation, foundations]
 ---
 
 This is the last part. I'll close by walking through one experiment from start to finish — including the stretch in the middle where my own code was the problem. I saved every version, so the messy runs sit in the repo next to the clean one, and that middle is where most of the learning was.

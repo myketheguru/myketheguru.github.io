@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240">
+  <defs>
+    <style>
+      .fast{stroke-dasharray:150;animation:draw 3s ease-in-out infinite}
+      @keyframes draw{0%,12%{stroke-dashoffset:150}42%,100%{stroke-dashoffset:0}}
+      .target{transform-box:view-box;transform-origin:196px 120px;animation:pulse 3s ease-in-out infinite}
+      @keyframes pulse{0%,42%{transform:scale(1);opacity:.6}58%{transform:scale(1.18);opacity:1}100%{transform:scale(1);opacity:.85}}
+      .branch{stroke-dasharray:96;animation:grow 3.6s ease-in-out infinite}
+      .b2{animation-delay:.2s}.b3{animation-delay:.35s}.b4{animation-delay:.5s}.b5{animation-delay:.65s}.b6{animation-delay:.8s}.b7{animation-delay:.95s}
+      @keyframes grow{0%,14%{stroke-dashoffset:96}64%,100%{stroke-dashoffset:0}}
+      @media(prefers-reduced-motion:reduce){*{animation:none!important;stroke-dashoffset:0!important;opacity:1!important}}
+    </style>
+  </defs>
+  <!-- look it up -->
+  <circle cx="40" cy="120" r="5" fill="#4FD8C4"/>
+  <line class="fast" x1="46" y1="120" x2="170" y2="120" stroke="#4FD8C4" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 160 111 L 172 120 L 160 129" fill="none" stroke="#4FD8C4" stroke-width="3"/>
+  <circle class="target" cx="196" cy="120" r="12" fill="none" stroke="#4FD8C4" stroke-width="2"/>
+  <circle cx="196" cy="120" r="3" fill="#4FD8C4"/>
+  <line x1="240" y1="46" x2="240" y2="194" stroke="#26262b" stroke-width="1"/>
+  <!-- go and search (branch out) -->
+  <circle cx="282" cy="120" r="5" fill="#59A9EE"/>
+  <g stroke="#59A9EE" stroke-width="2" fill="none" stroke-linecap="round">
+    <line class="branch" x1="287" y1="120" x2="345" y2="78"/>
+    <line class="branch b2" x1="287" y1="120" x2="345" y2="120"/>
+    <line class="branch b3" x1="287" y1="120" x2="345" y2="162"/>
+    <line class="branch b4" x1="345" y1="78" x2="408" y2="58"/>
+    <line class="branch b5" x1="345" y1="78" x2="408" y2="98"/>
+    <line class="branch b6" x1="345" y1="162" x2="408" y2="142"/>
+    <line class="branch b7" x1="345" y1="162" x2="408" y2="186"/>
+  </g>
+  <g fill="#4a463f"><circle cx="408" cy="58" r="3"/><circle cx="408" cy="98" r="3"/><circle cx="345" cy="120" r="3"/><circle cx="408" cy="142" r="3"/><circle cx="408" cy="186" r="3"/></g>
+</svg>

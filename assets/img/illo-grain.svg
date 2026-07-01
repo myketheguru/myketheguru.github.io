@@ -1,17 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240">
-  <defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4FD8C4"/><stop offset="1" stop-color="#59A9EE"/></linearGradient></defs>
+  <defs>
+    <linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4FD8C4"/><stop offset="1" stop-color="#59A9EE"/></linearGradient>
+    <style>
+      .along{stroke-dasharray:236;animation:draw 3.4s ease-in-out infinite}
+      @keyframes draw{0%{stroke-dashoffset:236}42%,58%{stroke-dashoffset:0}100%{stroke-dashoffset:-236}}
+      .cross{stroke-dasharray:120;animation:cut 3.4s steps(6,end) infinite}
+      @keyframes cut{0%,18%{stroke-dashoffset:120}72%,100%{stroke-dashoffset:0}}
+      @media(prefers-reduced-motion:reduce){*{animation:none!important;stroke-dashoffset:0!important}}
+    </style>
+  </defs>
   <g stroke="#3a3730" stroke-width="1.4" stroke-linecap="round">
     <line x1="40" y1="210" x2="190" y2="30"/><line x1="90" y1="210" x2="240" y2="30"/>
     <line x1="140" y1="210" x2="290" y2="30"/><line x1="190" y1="210" x2="340" y2="30"/>
     <line x1="240" y1="210" x2="390" y2="30"/><line x1="290" y1="210" x2="440" y2="30"/>
   </g>
-  <!-- split ALONG the grain: smooth, easy -->
   <g stroke="url(#g)" stroke-width="3.5" fill="none" stroke-linecap="round">
-    <line x1="165" y1="200" x2="315" y2="20"/>
+    <line class="along" x1="165" y1="200" x2="315" y2="20"/>
     <path d="M 305 26 L 316 18 L 314 32"/>
   </g>
-  <!-- cut ACROSS the grain: jagged, resisting -->
-  <g stroke="#5c584f" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8">
-    <polyline points="360,60 372,74 360,88 374,102 361,116 375,130"/>
-  </g>
+  <polyline class="cross" points="360,60 372,74 360,88 374,102 361,116 375,130" fill="none" stroke="#5c584f" stroke-width="2" stroke-linecap="round"/>
 </svg>

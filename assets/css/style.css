@@ -261,3 +261,10 @@ a.card:hover{box-shadow:0 22px 55px -32px rgba(79,216,196,.45)}
 .illo .fill-2{fill:var(--accent-2)}
 .illo .muted{fill:var(--ink-faint)}
 .illo .paper{fill:var(--ink)}
+
+/* ---- writing / research library ---------------------------------------- */
+.wr-series{color:var(--ink-dim);margin:0 0 .4rem}
+.wr-cat{font-family:var(--serif);font-weight:400;font-size:1.45rem;letter-spacing:-.01em;margin:2.8rem 0 1rem;color:var(--ink)}
+.wr-cat:first-of-type{margin-top:.5rem}
+.wr-all{display:inline-block;margin-top:1.9rem;font-size:.9rem;color:var(--accent);border-bottom:1px solid var(--accent-soft);padding-bottom:.15rem;transition:border-color .3s}
+.wr-all:hover{border-color:var(--accent)}

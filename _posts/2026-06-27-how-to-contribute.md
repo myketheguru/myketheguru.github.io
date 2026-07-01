@@ -3,6 +3,11 @@ layout: post
 title: "Part 4: How to contribute to the future of search"
 date: 2026-06-27 12:00:00 +0000
 permalink: /how-to-contribute/
+series: "Can We Abolish Search?"
+part: 4
+category: research
+summary: "You can't delete the hard work — so where do you push instead?"
+tags: [search, representation, computation, foundations]
 ---
 
 The first three parts were about ideas. This one is about *work* — what it actually looks like to push on the frontier this opens up. I'll start with a result that didn't go my way, because it set the tone for the rest.

@@ -1,0 +1,31 @@
+---
+layout: default
+title: "Writing & Research"
+permalink: /writing/
+description: "Essays, research and notes by Micheal Ezeoda — on search, representation, computation, and building software."
+---
+<section class="section" style="padding-top:9rem" id="library">
+  <div class="section__head"><span class="section__num">✎</span><h2 class="section__title">Writing &amp; Research</h2></div>
+  <p class="section__sub">Plain-English essays, research write-ups and notes — with the code. A growing library; more on the way.</p>
+
+  {% assign cats = site.posts | group_by: "category" %}
+  {% for cat in cats %}
+    <h3 class="wr-cat">{{ cat.name | default: "Notes" | replace: "research","Research" | replace: "education","Education" | capitalize }}</h3>
+    {% assign grouped = cat.items | group_by: "series" %}
+    {% for grp in grouped %}
+      {% if grp.name and grp.name != "" %}<p class="wr-series mono">Series · {{ grp.name }}</p>{% endif %}
+      <ul class="writing">
+        {% assign items = grp.items | sort: "part" %}
+        {% for post in items %}
+        <li><a href="{{ post.url | relative_url }}">
+          <span class="writing__idx">{% if post.part %}{{ post.part | prepend:'0' | slice:-2,2 }}{% else %}·{% endif %}</span>
+          <span class="writing__title">{{ post.title | split: ": " | last }}</span>
+          <span class="writing__date">{{ post.date | date: "%b %Y" }}</span>
+        </a></li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  {% endfor %}
+
+  <a class="wr-all" href="{{ '/#top' | relative_url }}">← Back to home</a>
+</section>

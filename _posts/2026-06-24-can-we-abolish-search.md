@@ -3,6 +3,11 @@ layout: post
 title: "Part 1: Can We Abolish Search?"
 date: 2026-06-24 12:00:00 +0000
 permalink: /can-we-abolish-search/
+series: "Can We Abolish Search?"
+part: 1
+category: research
+summary: "Two kinds of search — and why the hard one can't be wished away."
+tags: [search, representation, computation, foundations]
 ---
 
 There's a particular kind of magic I've chased my whole career as an engineer. You're stuck on something ugly, someone shows you a different way to look at it, and the ugliness just… evaporates. The problem didn't change. Your view of it did.
@@ -16,6 +21,8 @@ I'll say up front that most of what follows is me re-deriving things much smarte
 One is *looking something up* — "find me the photo most like this one." Search engines and recommendation feeds do this, and we're genuinely great at it.
 
 The other is *going and searching* — "find the one move that wins this chess position," where the only way to know is to explore possibilities, often a mountain of them. That's the hard one, and it's the one the hype quietly promises to kill. So that's the one I went after.
+
+<figure class="illo"><img src="/assets/img/illo-two-searches.svg" alt="One search looks something up; the other explores a branching space." loading="lazy"><figcaption>Look it up — or go and search.</figcaption></figure>
 
 ## You can't kill it
 

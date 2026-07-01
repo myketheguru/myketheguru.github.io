@@ -3,6 +3,11 @@ layout: post
 title: "Part 3: Computation is explanation"
 date: 2026-06-26 12:00:00 +0000
 permalink: /computation-is-explanation/
+series: "Can We Abolish Search?"
+part: 3
+category: research
+summary: "Why describing the world isn't the same as understanding it."
+tags: [search, representation, computation, foundations]
 ---
 
 By the end of [Part 2](/why-representation-is-everything/), the picture had settled: the way you frame a problem is a lever — floored below by things you can't summarize, capped above by what you can actually reach, and it works by lining up with a grain the problem already has. The obvious next move is to lean hard on *compression*. Squeezing data down to its shortest description is the mathematical version of "finding the pattern" — the shorter the summary, the more structure you've captured. It's the idea behind Occam's razor: the best explanation is the simplest one that fits.
@@ -34,6 +39,8 @@ So the things people sometimes set against compression — experiments, interven
 Step back over the whole arc — the searching you can't delete in [Part 1](/can-we-abolish-search/), the power and limits of framing in Part 2, and now compression's blindness to cause — and the same object keeps appearing under different names. Call it the **dial**.
 
 A frame doesn't change how much total work a problem takes. It changes how the work is *split*: how much becomes cheap, direct *access* — the answer's just sitting right there — and how much stays irreducible *search*, where you have no choice but to dig. The shape of the problem, the coordinates you embed it in, the assumptions you bring: all of it is the dial, setting the ratio of easy to hard.
+
+<figure class="illo"><img src="/assets/img/illo-dial.svg" alt="A dial swinging between access and search." loading="lazy"><figcaption>The frame is a dial: cheap access ⟷ hard search.</figcaption></figure>
 
 And the dial only turns as far as the structure allows. Here's the grown-up version of "more assumptions are better": averaged over *every possible problem*, every set of assumptions performs exactly the same. (That's a real theorem — Wolpert and Macready's "No Free Lunch.") A prior only wins on the problems whose structure it happens to fit. So the slogan I started with — "capability tracks the prior" — needs the one correction I think is the most important line in the series: **capability tracks the *match* between your assumptions and the structure the world actually has.** The prior isn't magic. It's a key, and it only opens locks shaped like it. The world has to be doing half the work.
 
