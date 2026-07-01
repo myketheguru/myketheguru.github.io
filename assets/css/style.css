@@ -204,6 +204,9 @@ a.card:hover .card__go{color:var(--accent);letter-spacing:.03em}
 /* ---- reveal ------------------------------------------------------------- */
 [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 [data-reveal].is-in{opacity:1;transform:none}
+/* post body reveals in chunks (JS adds .chunk only when it can animate them) */
+.post__body .chunk{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.post__body .chunk.is-in{opacity:1;transform:none}
 
 /* ---- responsive --------------------------------------------------------- */
 @media (max-width:760px){
@@ -222,7 +225,7 @@ a.card:hover .card__go{color:var(--accent);letter-spacing:.03em}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;scroll-behavior:auto}
-  [data-reveal]{opacity:1;transform:none;transition:none}
+  [data-reveal],.post__body .chunk{opacity:1;transform:none;transition:none}
 }
 
 /* ---- teal/blue gradient accents & ambient glows ------------------------- */

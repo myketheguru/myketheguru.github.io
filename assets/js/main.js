@@ -2,16 +2,27 @@
 (function () {
   "use strict";
 
-  // Scroll-reveal
+  // Scroll-reveal for home sections + per-chunk reveal for long post bodies.
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var reveal = document.querySelectorAll("[data-reveal]");
-  if ("IntersectionObserver" in window && reveal.length) {
+  var body = document.querySelector(".post__body");
+  var chunks = body ? body.querySelectorAll(
+    ":scope > p, :scope > h2, :scope > h3, :scope > ul, :scope > ol, :scope > blockquote, :scope > pre, :scope > figure, :scope > hr"
+  ) : [];
+
+  if ("IntersectionObserver" in window && !reduce) {
+    // Hide chunks ONLY when we can animate them — so content is never left stuck hidden.
+    chunks.forEach(function (el) { el.classList.add("chunk"); });
+    // threshold 0 => elements taller than the viewport still trigger as they enter.
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    }, { threshold: 0, rootMargin: "0px 0px -8% 0px" });
     reveal.forEach(function (el) { io.observe(el); });
+    chunks.forEach(function (el) { io.observe(el); });
   } else {
+    // No IO / reduced motion: everything visible, no reveal.
     reveal.forEach(function (el) { el.classList.add("is-in"); });
   }
 
