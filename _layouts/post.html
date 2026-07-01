@@ -1,6 +1,16 @@
 ---
 layout: default
 ---
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+"headline":{{ page.title | jsonify }},
+"datePublished":"{{ page.date | date_to_xmlschema }}",
+"url":"{{ page.url | absolute_url }}",
+"description":{{ page.description | default: page.title | jsonify }},
+"author":{"@type":"Person","name":"Micheal Ezeoda","url":"https://myketheguru.github.io"},
+"publisher":{"@type":"Person","name":"Micheal Ezeoda"},
+"isPartOf":{"@type":"Blog","name":"Micheal Ezeoda — Writing & Research"}}
+</script>
 <article class="post">
   <a class="post__back" href="{{ '/#writing' | relative_url }}">← All writing</a>
   <p class="post__meta"><span class="mono">{{ page.date | date: "%B %Y" }}</span></p>

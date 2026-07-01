@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240">
+  <!-- same data (two identical curves overlapping) -->
+  <path d="M 30 130 C 70 90 100 90 140 130 C 170 160 190 160 210 130" fill="none" stroke="#4FD8C4" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 30 130 C 70 90 100 90 140 130 C 170 160 190 160 210 130" fill="none" stroke="#59A9EE" stroke-width="3" stroke-linecap="round" transform="translate(0,5)" opacity=".8"/>
+  <!-- intervention: do() -->
+  <g stroke="#8a867c" stroke-width="1.6" stroke-dasharray="4 4" fill="none">
+    <line x1="240" y1="40" x2="240" y2="190"/>
+  </g>
+  <path d="M 232 178 L 240 192 L 248 178" fill="none" stroke="#8a867c" stroke-width="1.6"/>
+  <!-- diverge -->
+  <path d="M 270 130 C 330 130 360 90 445 60" fill="none" stroke="#4FD8C4" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 270 130 C 330 130 360 150 445 150" fill="none" stroke="#59A9EE" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="445" cy="60" r="4" fill="#4FD8C4"/><circle cx="445" cy="150" r="4" fill="#59A9EE"/>
+</svg>

@@ -23,6 +23,8 @@ So what's the real frontier? It falls straight out of the arc. We can't abolish 
 
 There are two genuinely real, genuinely fundable frontiers here. Both *move* the cost somewhere cheaper. Neither deletes it — and being clear about that is what keeps the work grounded.
 
+<figure class="illo"><img src="/assets/img/illo-roads.svg" alt="Two roads forward from a single point." loading="lazy"><figcaption>Two roads forward — neither deletes the work.</figcaption></figure>
+
 ## Frontier one: finding the right "shape of space"
 
 The first is the one this whole series circles: find the kind of map that matches a problem's structure, so that "close together" means "related" and you can just walk to the answer instead of searching for it. When your data branches like a family tree, an ordinary flat map runs out of room fast — but a *curved* kind of map, one that keeps expanding as you go outward, holds a branching tree comfortably. When a problem has a symmetry, there's a frame that untangles it. The work is finding the shape that fits.

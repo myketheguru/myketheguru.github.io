@@ -19,6 +19,8 @@ Compression can't tell them apart. From the data alone, "X causes Y" and "Y caus
 
 And that's not a footnote. Ask each story what happens if you *reach in and set X to 3 by force*. The true one says Y jumps to 6, because X drives Y. The backwards one says Y doesn't move at all, because in its telling X is downstream and can't push Y around. Same data, same compression score, and the predictions for *acting on the world* are 6 versus 0 — about as far apart as predictions get.
 
+<figure class="illo"><img src="/assets/img/illo-cause.svg" alt="Two identical curves that split the moment you intervene." loading="lazy"><figcaption>Same data — until you reach in and change something.</figcaption></figure>
+
 ## The rung compression can't reach
 
 This isn't a quirk of my toy — it's a theorem, and it belongs to Judea Pearl. Think of a ladder with three rungs: *seeing* (what goes with what), *doing* (what happens if I intervene), and *imagining* (what would have happened otherwise). The rungs are genuinely separate: for almost any situation, the higher rungs are *not* settled by the lower ones. Plain observation lives on the bottom rung. No amount of squeezing it gets you up to the next one.

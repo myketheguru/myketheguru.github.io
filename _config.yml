@@ -1,17 +1,35 @@
 title: "Micheal Ezeoda"
 tagline: "Engineer · Consultant · Independent Researcher"
 description: >-
-  Micheal Ezeoda — technology consultant and senior full-stack engineer (10+ years),
-  independent researcher, and chess player. Building products; chasing hard questions.
+  Micheal Ezeoda (Ezeoda) — technology consultant and senior full-stack engineer with 10+ years
+  across fintech, SaaS and education. React, Next.js, TypeScript, Node.js, Python, Go, Rust, AWS,
+  GCP. Former CTO, product founder, and independent researcher in computation. Based in Lagos,
+  working worldwide.
 url: "https://myketheguru.github.io"
+lang: en
+image: /assets/img/og.svg
+
 author:
   name: "Micheal Ezeoda"
+  email: "darkmyketheguru@gmail.com"
+  url: "https://myketheguru.github.io"
+
 github_username: myketheguru
+twitter:
+  username: _darkmyke
+  card: summary_large_image
+social:
+  name: "Micheal Ezeoda"
+  links:
+    - https://github.com/myketheguru
+    - https://www.linkedin.com/in/mikexpress
+    - https://x.com/_darkmyke
 
 # Custom theme — no gem theme; layouts + assets are hand-built.
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 exclude:
   - README.md

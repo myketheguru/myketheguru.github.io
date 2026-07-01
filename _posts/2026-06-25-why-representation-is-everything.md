@@ -27,6 +27,8 @@ Take a simple rule — "is the number of 'yes' inputs odd?" Written one way, it'
 
 Why does a frame have this power? Because a good one lines up with a grain the problem already has. My favorite demo makes it physical. There's an operation at the core of signal processing and a lot of AI. In ordinary coordinates it's a dense, tangled thing. Switch to the coordinates that match its natural symmetry, and measure how much "tangle" is left: **0.0000**. It becomes perfectly clean — every piece independent. That's the entire reason the Fast Fourier Transform is fast. Now run the same trick on something with *no* symmetry to exploit, and the tangle stays at **0.97** — the frame does nothing, because there's no grain to follow. That contrast, 0.0000 versus 0.97, is the whole thesis in two numbers: a frame is leverage exactly to the degree it matches a structure the problem actually contains. (Researchers call the well-matched frame the "Fourier basis"; the modern version of this idea, aligning a model with the data's symmetry, is what people mean by *geometric deep learning*. But you can just watch the number drop to zero.)
 
+<figure class="illo"><img src="/assets/img/illo-grain.svg" alt="Splitting along the grain is easy; cutting across it fights you." loading="lazy"><figcaption>Along the grain, or against it.</figcaption></figure>
+
 ## The trap: real, but unfindable
 
 Here's where I had to correct myself, and where the most interesting boundary sits.

@@ -23,6 +23,8 @@ The first thing I learned is that you can't — and it's not a hunch, it's prova
 
 Then I built a tiny program to feel it directly. Picture a hard problem as having a cost *floor* — the least juggling you can possibly get away with. My program took the same problem and tried it hundreds of different ways, measuring the floor each time. The floor never moved. Shuffle everything, rename it all — still 10, 10, 10, 10, 10. The searching didn't vanish. It's *conserved*, like water in a sealed pipe: squeeze it out of one spot and it bulges out somewhere else. You can move the work around. You can't delete it.
 
+<figure class="illo"><img src="/assets/img/illo-conserved.svg" alt="A surface pressed down in one place bulges up in another — the work is conserved, not removed." loading="lazy"><figcaption>Press the work down here, it rises there.</figcaption></figure>
+
 ## So is "how you look at it" pointless? The opposite — it's the whole game
 
 Some problems that look hopeless become trivial the instant you use the *right* method, and stay hopeless with the wrong one. In one demo I hand the same puzzle to two solvers. The first one's approach happens to match the puzzle's hidden shape, and it cracks it instantly. The second, a general-purpose searcher that doesn't know that shape, grinds away and blows up — on the *identical* puzzle. It's keys and locks: the right key turns with a fingertip; the wrong key won't budge no matter how hard you shove. What matters is the *shape* of the problem, not its size.

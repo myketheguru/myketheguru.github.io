@@ -13,6 +13,8 @@ The experiment is the practical end of everything in [Part 4](/how-to-contribute
 
 I built a testbed where I control the truth completely. I generate a branching family tree — pure structure — and I can slowly scramble it toward randomness with a knob, smoothly melting it from "perfect tree" into "random tangle." Then I place the items on two kinds of map: an ordinary flat one, and a *curved* one that keeps expanding outward and so has natural room for a branching tree. The question is whether the curved map keeps genuinely-related items closer together — and whether its edge fades exactly as I destroy the structure. If the idea is real, the curved map should win for tree-shaped data and lose that edge as the tree dissolves into noise.
 
+<figure class="illo"><img src="/assets/img/illo-frontier.svg" alt="A flat grid transforming into a curved one." loading="lazy"><figcaption>Flat space, or curved to fit the shape.</figcaption></figure>
+
 ## Run 1: promising, but fuzzy
 
 The first version gave a directional hint. The curved map did help for tree-shaped data, and its advantage did seem to shrink as I scrambled the tree — positive on the tree, negative on the random tangle. Encouraging. But my yardstick was crude, and the effect was small and muddied by a wrinkle: reconstructing a tree is *inherently* harder than reconstructing a loose random graph, so the comparison wasn't clean. I reported it as what it was — promising, not conclusive.
